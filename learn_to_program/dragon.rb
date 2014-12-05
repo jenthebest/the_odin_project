@@ -101,12 +101,25 @@ class Dragon
 end
 
 pet = Dragon.new('Puff')
-pet.feed
-pet.toss
-pet.walk
-pet.put_to_bed
-pet.rock
-pet.put_to_bed
-pet.put_to_bed
-pet.put_to_bed
-pet.put_to_bed
+
+command = ''
+
+while command != 'exit'
+	puts 'What would you like to do with your dragon?'
+	command = gets.chomp.downcase
+	if command == 'feed'
+		pet.feed
+	elsif command == 'walk'
+		pet.walk
+	elsif command == 'put_to_bed'
+		pet.put_to_bed
+	elsif command == 'toss'
+		pet.toss
+	elsif command == 'rock'
+		pet.rock
+	elsif command == 'exit'
+		exit
+	else
+		puts "Try something else."
+	end
+end
